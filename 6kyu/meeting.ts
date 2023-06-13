@@ -15,7 +15,6 @@
 //My Solution:
 
 export function meeting(s: string): string {
-
   const temp = s.toUpperCase().split(';').map((item)=>item.split(':'))
   temp.map(item=>{
       let myArray = item;
@@ -25,4 +24,10 @@ export function meeting(s: string): string {
   swapElements(item, 0, 1)
  })
   return temp.map(item => `(${item.join(', ')})`).sort().join('')
+}
+
+//Another Solution:
+
+export function meeting2(s: string): string {
+  return s.toUpperCase().split(';').map((item)=>item.split(':').reverse().join(', ')).map(item=>`(${item})`).sort().join('')
 }
