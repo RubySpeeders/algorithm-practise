@@ -24,3 +24,11 @@ export function findUniq(arr: number[]): number {
   }
   return result;
 }
+
+export function findUniq2(arr: number[]): number {
+  // Do the magic
+  const temp = arr.sort();
+  if (temp[0] === temp[1]) {
+    return temp[temp.length - 1];
+  } else return temp[0];
+}
