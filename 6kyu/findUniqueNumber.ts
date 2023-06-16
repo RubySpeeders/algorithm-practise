@@ -25,6 +25,8 @@ export function findUniq(arr: number[]): number {
   return result;
 }
 
+//another solution
+
 export function findUniq2(arr: number[]): number {
   // Do the magic
   const temp = arr.sort();
