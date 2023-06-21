@@ -7,7 +7,6 @@
 //My solution:
 
 //WIP
-
 export const pigIt = (a: string): string => {
   // code away
   const answer = a.match(/\b\w+\b|[^\s]/g);
@@ -22,9 +21,19 @@ export const pigIt = (a: string): string => {
       }
       return wordSplit.join("");
     });
-    console.log(temp);
-    result = temp.join(" ");
-    console.log(temp.join(" "));
+    let pigLatin = "";
+    temp.map((word, i) => {
+      if (i === 0) {
+        pigLatin = word;
+      }
+      if (i > 0 && !/[^a-zA-Z]/.test(word)) {
+        pigLatin = pigLatin + " " + word;
+      }
+      if (i !== 0 && /[^a-zA-Z]/.test(word)) {
+        pigLatin = pigLatin + word;
+      }
+    });
+    result = pigLatin;
   }
   return result;
 };
